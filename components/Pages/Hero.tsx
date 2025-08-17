@@ -32,7 +32,7 @@ function Hero() {
         <div className="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm" />
       </div>
       
-      <div className="h-[100dvh] relative z-10 flex flex-col">
+      <div className="h-[100dvh] relative z-10 flex flex-col mt-0 md:mt-10">
         {/* Content Container */}
         <div className="flex-1 flex items-center">
           <div className="container mx-auto px-4">
