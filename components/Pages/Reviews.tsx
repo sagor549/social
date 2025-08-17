@@ -186,7 +186,7 @@ function Reviews() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
                   >
-                    "{testimonials[activeTestimonial].quote}"
+                   &quot;{testimonials[activeTestimonial].quote}&quot;
                   </motion.p>
                   
                   <div className="space-y-2">

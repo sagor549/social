@@ -131,7 +131,7 @@ export default function ContactSection() {
                 
                 <div className="mb-6">
                   <label className="block text-lg font-medium mb-4 text-gray-800">
-                    What's your main goal with ads right now?
+                   What&apos;s your main goal with ads right now?
                   </label>
                   <div className="space-y-3">
                     {[
@@ -160,7 +160,7 @@ export default function ContactSection() {
                 
                 <div className="mb-6">
                   <label className="block text-lg font-medium mb-4 text-gray-800">
-                    What's your current monthly ad budget?
+                   What&apos;s your current monthly ad budget?
                   </label>
                   <div className="space-y-3">
                     {[

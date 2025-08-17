@@ -135,7 +135,7 @@ function PackageSection() {
             <ul className="space-y-5 text-lg lg:text-xl text-black">
               <li className="flex items-start gap-3">
                 <span className="text-[#B9935B]">•</span>
-                <span>Brands that don't want to learn Meta or TikTok Ads from scratch</span>
+                <span>Brands that don&apos;t want to learn Meta or TikTok Ads from scratch</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#B9935B]">•</span>
@@ -143,7 +143,7 @@ function PackageSection() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#B9935B]">•</span>
-                <span>Anyone who's been burned by an agency that "just boosted posts"</span>
+                <span>Anyone who&apos;s been burned by an agency that &quot;just boosted posts&quot;</span>
               </li>
             </ul>
           </div>
@@ -202,7 +202,9 @@ function PackageSection() {
         
         <div className="text-center mt-6 max-w-3xl mx-auto">
           <p className="text-lg lg:text-xl text-black">
-            If we don't generate at least 10 qualified leads by day 30, we'll extend the campaign for up to 2 weeks at no extra charge—with new creative, new targeting, and continued optimization—until we hit that threshold.
+           If we don&apos;t generate at least 10 qualified leads by day 30, we&apos;ll extend
+  the campaign for up to 2 weeks at no extra charge—with new creative, new
+  targeting, and continued optimization—until we hit that threshold.
           </p>
         </div>
       </div>
