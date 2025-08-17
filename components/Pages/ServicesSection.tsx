@@ -274,7 +274,7 @@ function ServicesSection() {
           ].map((service, index) => (
             <div
               key={index}
-              ref={(el) => (serviceRefs.current[index] = el)}
+              ref={(el) => {serviceRefs.current[index] = el}}
               className="relative"
             >
               <div 
@@ -338,7 +338,7 @@ function ServicesSection() {
             ].map((feature, index) => (
               <div 
                 key={index}
-                ref={(el) => (featureRefs.current[index] = el)}
+                ref={(el) => {featureRefs.current[index] = el}}
                 className="relative"
               >
                 <div 
