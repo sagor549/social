@@ -54,7 +54,7 @@ function Hero() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                   >
-                    Stop Wasting Money on <span className="text-[#B9935B]">Ineffective Ads</span>
+                    Stop Wasting Money on <span className="text-[#ECCE98]">Ineffective Ads</span>
                   </motion.h1>
                   
                   <motion.div 

@@ -1,18 +1,16 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef,useId, useEffect } from "react";
+import { useRef, useId, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-
-
-
 
 function AboutSection() {
   const headerRef1 = useRef(null);
   const headerRef2 = useRef(null);
   const headerRef3 = useRef(null);
+  const headerRef4 = useRef(null);
   const stat1Ref = useRef(null);
   const stat2Ref = useRef(null);
 
@@ -24,18 +22,23 @@ function AboutSection() {
       { ref: headerRef1, end: "top 80%" },
       { ref: headerRef2, end: "top 70%" },
       { ref: headerRef3, end: "top 60%" },
+      { ref: headerRef4, end: "top 50%" },
     ];
 
     headers.forEach(header => {
-      gsap.from(header.ref.current, {
-        scrollTrigger: {
-          trigger: header.ref.current,
-          start: "top 100%",
-          end: header.end,
-          scrub: true,
-        },
-        y: "100%",
-      });
+      if (header.ref.current) {
+        gsap.from(header.ref.current, {
+          scrollTrigger: {
+            trigger: header.ref.current,
+            start: "top 100%",
+            end: header.end,
+            scrub: true,
+          },
+          y: "100%",
+          opacity: 0,
+          duration: 1,
+        });
+      }
     });
 
     // Content fade-in
@@ -72,26 +75,34 @@ function AboutSection() {
       
       {/* Added subtle white overlay for brighter background */}
       <div className="absolute inset-0 bg-white bg-opacity-10 -z-10"></div>
+      
       {/* Animated Headers */}
-      <div className="flex flex-col items-center text-center lg:text-left lg:items-start gap-5">
+      <div className="flex flex-col text-left gap-5 mb-12">
         <div className="mask overflow-hidden">
           <h2 ref={headerRef1} className="text-4xl lg:text-5xl uppercase" style={{ color: 'black' }}>
            Stop wasting money on underperforming ads.
           </h2>
         </div>
-        <div className=" overflow-hidden">
+        
+        <div className="">
           <h2
             ref={headerRef2}
-            className="text-4xl lg:text-5xl  mt-0 md:mt-5"
-            style={{ color: '#B9935B' }}
-          ><span className="text-black">We </span>
-           Create And Refine <span className="text-black mt-2 block lg:inline">Ad Campaigns That Capture Attention,</span><span>  Target The Right Audience</span>
+            className="text-4xl lg:text-5xl mt-0 md:mt-5"
+          >
+            <span className="text-black">We </span>
+            <span style={{ color: '#B9935B' }}>Create And Refine </span><span className="text-black">Ad Campaigns That </span><span style={{ color: '#B9935B' }}>Capture Attention</span> <span className="text-black">Target The </span>
+            <span style={{ color: '#B9935B' }}>Right Audience</span>
           </h2>
         </div>
-        <div className="mask overflow-hidden">
+        
+       
+        
+      
+        
+        <div className="mask overflow-hidden mt-5">
           <h2 
-            ref={headerRef3} 
-            className="text-4xl lg:text-5xl uppercase mt-2 text-black md:mt-5"  
+            ref={headerRef4} 
+            className="text-4xl lg:text-5xl uppercase"  
           >
            and turn clicks <span style={{ color: '#B9935B' }}>into customers.</span>
           </h2>
@@ -111,15 +122,14 @@ function AboutSection() {
 
         <div className="flex flex-col gap-4 max-w-2xl">
           <div className="flex flex-col gap-4">
-           <p className="text-lg md:text-4xl bio text-black text-center lg:text-left">
-  <span style={{ color: '#B9935B' }}>Your ad spend is going to waste</span> on campaigns that don’t convert. 
-  We build <span style={{ color: '#B9935B' }}>high-performance ad strategies</span> that capture attention, 
-  target the right audience, and turn clicks into customers through data-driven optimization and testing. 
-  <span style={{ color: '#B9935B' }}>Stop losing money</span> on ads that fail to deliver.
-</p>
+           <p className="text-2xl md:text-4xl bio text-black text-left">
+              <span style={{ color: '#B9935B' }}>Your ad spend is going to waste</span> on campaigns that don't convert. 
+              We build <span style={{ color: '#B9935B' }}>high-performance ad strategies</span> that capture attention, 
+              target the right audience, and turn clicks into customers through data-driven optimization and testing. 
+              <span style={{ color: '#B9935B' }}> Stop losing money</span> on ads that fail to deliver.
+            </p>
 
-
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex justify-start mt-4">
               <Link
                 href="/contact"
                 className="text-xs lg:text-sm tracking-wide uppercase px-6 py-3 bio transition-all hover:bg-[#B9935B] hover:text-black border border-[#B9935B]"
@@ -165,7 +175,7 @@ function AboutSection() {
           
           <div className="flex flex-col gap-4 max-w-2xl">
             <h3 className="text-2xl lg:text-3xl font-bold" style={{ color: '#B9935B' }}>Free Strategy Call</h3>
-            <p className="text-lg lg:text-2xl text-black">
+            <p className="text-lg lg:text-xl text-black">
               We understand your brand, audience, and goals to create a tailored advertising strategy that aligns with your objectives.
             </p>
           </div>
@@ -184,7 +194,7 @@ function AboutSection() {
           
           <div className="flex flex-col gap-4 max-w-2xl">
             <h3 className="text-2xl lg:text-3xl font-bold" style={{ color: '#B9935B' }}>Optimize & Scale</h3>
-            <p className="text-lg lg:text-2xl text-black">
+            <p className="text-lg lg:text-xl text-black">
               We refine campaigns daily to maximize ROI, starting from under $500 and scaling as you grow.
             </p>
           </div>
@@ -203,7 +213,7 @@ function AboutSection() {
           
           <div className="flex flex-col gap-4 max-w-2xl">
             <h3 className="text-2xl lg:text-3xl font-bold" style={{ color: '#B9935B' }}>Launch & Test</h3>
-            <p className="text-lg lg:text-2xl text-black">
+            <p className="text-lg lg:text-xl text-black">
               Ads go live within 7 days, with continuous testing across platforms like Facebook, Instagram, TikTok, and YouTube.
             </p>
           </div>

@@ -3,10 +3,7 @@ import { useRef, useId, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-
 import Link from "next/link";
-
-
 
 // ServicesSection Component
 function ServicesSection() {
@@ -185,7 +182,7 @@ function ServicesSection() {
           ))}
         </div>
 
-        {/* Features Section - Improved layout similar to services */}
+        {/* Features Section - Completely Redesigned */}
         <div className="mt-24 max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center lg:text-left mb-16">
             <div className="mask overflow-hidden">
@@ -204,49 +201,49 @@ function ServicesSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-10">
-            {[
-              {
-                num: "01",
-                title: "Budget-Friendly Plans",
-                desc: "Start from under $500 and scale as you grow — we'll optimize every dollar for maximum results."
-              },
-              {
-                num: "02",
-                title: "Goal-Based Campaigns",
-                desc: "Whether you want more sales, more leads, or brand awareness, we'll craft ads that hit the mark."
-              },
-              {
-                num: "03",
-                title: "Platform Expertise",
-                desc: "Facebook, Instagram, TikTok, YouTube, Pinterest — or get an expert recommendation."
-              }
-            ].map((feature, index) => (
-              <div 
-                key={index}
-                ref={(el) => {featureRefs.current[index] = el}}
-                className="relative"
-              >
+          {/* New Radial/Circular Design for Features */}
+          <div className="relative py-16">
+            {/* Decorative circles in background */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-96 rounded-full border border-[#B9935B] opacity-20"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-72 rounded-full border border-[#B9935B] opacity-30"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md h-48 rounded-full border border-[#B9935B] opacity-40"></div>
+            
+            <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 z-10">
+              {[
+                {
+                  num: "01",
+                  title: "Budget-Friendly Plans",
+                  desc: "Start from under $500 and scale as you grow — we'll optimize every dollar for maximum results."
+                },
+                {
+                  num: "02",
+                  title: "Goal-Based Campaigns",
+                  desc: "Whether you want more sales, more leads, or brand awareness, we'll craft ads that hit the mark."
+                },
+                {
+                  num: "03",
+                  title: "Platform Expertise",
+                  desc: "Facebook, Instagram, TikTok, YouTube, Pinterest — or get an expert recommendation."
+                }
+              ].map((feature, index) => (
                 <div 
-                  className={`flex items-start pb-8 ${index % 2 === 0 ? '' : 'lg:justify-end'}`}
+                  key={index}
+                  ref={(el) => {featureRefs.current[index] = el}}
+                  className="flex flex-col items-center text-center group"
                 >
-                  <div className={`flex items-start w-full lg:w-1/2 ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
-                    {/* Fixed spacing logic here */}
-                    <div className={`text-[#B9935B] text-4xl ${index % 2 === 0 ? 'mr-6' : 'ml-6'}`}>
-                      {feature.num}
-                    </div>
-                    <div className={`${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
-                      <h3 className="text-2xl font-bold mb-3 text-black">{feature.title}</h3>
-                      <p className="text-lg text-black opacity-80">{feature.desc}</p>
-                    </div>
+                  {/* Circular number indicator */}
+                  <div className="w-20 h-20 rounded-full bg-[#B9935B] flex items-center justify-center text-white text-2xl font-bold mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-black">
+                    {feature.num}
                   </div>
+                  
+                  <h3 className="text-xl font-bold mb-4 text-black">{feature.title}</h3>
+                  <p className="text-lg text-black opacity-80 px-4">{feature.desc}</p>
+                  
+                  {/* Decorative lines extending from circle */}
+                  <div className="w-px h-8 bg-[#B9935B] opacity-50 mt-6"></div>
                 </div>
-                {/* Border for features */}
-                <div 
-                  className={`absolute bottom-0 h-px bg-[#333333] ${index % 2 === 0 ? 'left-0' : 'lg:left-1/2'} w-full lg:w-1/2`}
-                ></div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* CTA */}
