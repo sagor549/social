@@ -123,7 +123,7 @@ function AboutSection() {
         <div className="flex flex-col gap-4 max-w-2xl">
           <div className="flex flex-col gap-4">
            <p className="text-2xl md:text-4xl bio text-black text-left">
-              <span style={{ color: '#B9935B' }}>Your ad spend is going to waste</span> on campaigns that don't convert. 
+              <span style={{ color: '#B9935B' }}>Your ad spend is going to waste</span> on campaigns that don&apos;t convert. 
               We build <span style={{ color: '#B9935B' }}>high-performance ad strategies</span> that capture attention, 
               target the right audience, and turn clicks into customers through data-driven optimization and testing. 
               <span style={{ color: '#B9935B' }}> Stop losing money</span> on ads that fail to deliver.
